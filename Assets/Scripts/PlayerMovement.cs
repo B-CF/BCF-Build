@@ -19,6 +19,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(speed * Time.deltaTime, 0f, 0f);
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            GetComponent<Rigidbody2D>().AddForce(-runForce, ForceMode2D.Impulse);
+        }
         //run in x direction
         if (Input.GetKeyDown(KeyCode.D))
         {
