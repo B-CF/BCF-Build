@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     //needed variables to edit in unity
     public float speed;
     public Vector2 jumpForce;
+    public Vector2 runForce;
 
     // Start is called before the first frame update
     void Start()
@@ -17,8 +18,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //run in x direction
         transform.Translate(speed * Time.deltaTime, 0f, 0f);
+        //run in x direction
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            GetComponent<Rigidbody2D>().AddForce(runForce, ForceMode2D.Impulse);
+        }
 
         //jump/move in y direction
         if (Input.GetKeyDown(KeyCode.Space))
