@@ -9,7 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public float playerSpeed;
     public float dashSpeed;
     public Vector2 jumpForce;
-    public Vector2 runForce;
+
+    //get player
     Rigidbody2D rb;
 
     // Start is called before the first frame update
