@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //needed variables to edit in unity
+    private float realSpeed;
     public float playerSpeed;
+    public float dashSpeed;
     public Vector2 jumpForce;
     public Vector2 runForce;
     Rigidbody2D rb;
@@ -19,12 +21,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
+        if (Input.GetKeyDown(KeyCode.Z))
+         {
             rb.AddForce(-runForce, ForceMode2D.Impulse);
         }
-
-        
 
         if (Input.GetKeyDown(KeyCode.D))
         {
