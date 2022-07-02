@@ -5,39 +5,43 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //needed variables to edit in unity
-    public float speed;
+    public float playerSpeed;
     public Vector2 jumpForce;
     public Vector2 runForce;
+    Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(speed * Time.deltaTime, 0f, 0f);
         if (Input.GetKeyDown(KeyCode.A))
         {
-            GetComponent<Rigidbody2D>().AddForce(-runForce, ForceMode2D.Impulse);
+            rb.AddForce(-runForce, ForceMode2D.Impulse);
         }
-        //run in x direction
+
+        
+
         if (Input.GetKeyDown(KeyCode.D))
         {
-            GetComponent<Rigidbody2D>().AddForce(runForce, ForceMode2D.Impulse);
+            rb.AddForce(runForce, ForceMode2D.Impulse);
         }
 
         //jump/move in y direction
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GetComponent<Rigidbody2D>().AddForce(jumpForce, ForceMode2D.Impulse);
+            rb.AddForce(jumpForce, ForceMode2D.Impulse);
         }
     }
     //Update is called multiple times a frame
     void FixedUpdate()
     {
-        
+        float x = Input.GetAxis("Horizontal");
+        Vector3 move = new Vector3 (x * playerSpeed, rb.velocity.y, 0f);
+        rb.velocity = move;
     }
 }
