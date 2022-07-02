@@ -270,7 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   jumpForce: {x: 0, y: 10}
-  runForce: {x: 0, y: 0}
+  runForce: {x: 3, y: 0}
 --- !u!1 &96596878
 GameObject:
   m_ObjectHideFlags: 0
