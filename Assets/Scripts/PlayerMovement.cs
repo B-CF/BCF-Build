@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public float playerSpeed;
     public float dashSpeed;
     public Vector2 jumpForce;
+    private bool canJump = true;
+    private int numberJumps = 2;
 
     //get player
     Rigidbody2D rb;
@@ -23,9 +25,17 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //jump/move in y direction
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canJump)
         {
-            rb.AddForce(jumpForce, ForceMode2D.Impulse);
+            if (numberJumps != 0)
+            {
+                rb.AddForce(jumpForce, ForceMode2D.Impulse);
+                numberJumps--;
+            }
+            else
+            {
+                canJump = false;
+            }
         }
     }
     //Update is called multiple times a frame
@@ -45,5 +55,11 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         Vector3 move = new Vector3 (x * realSpeed, rb.velocity.y, 0f);
         rb.velocity = move;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {    
+        canJump = true;
+        numberJumps = 2;  
     }
 }
