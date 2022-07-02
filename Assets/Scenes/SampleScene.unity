@@ -270,9 +270,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 10
-  dashSpeed: 0
+  dashSpeed: 20
   jumpForce: {x: 0, y: 10}
-  runForce: {x: 3, y: 0}
+  runForce: {x: 0, y: 0}
 --- !u!95 &35787462
 Animator:
   serializedVersion: 3

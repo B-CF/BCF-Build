@@ -21,16 +21,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-         {
-            rb.AddForce(-runForce, ForceMode2D.Impulse);
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            rb.AddForce(runForce, ForceMode2D.Impulse);
-        }
-
         //jump/move in y direction
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -40,8 +30,19 @@ public class PlayerMovement : MonoBehaviour
     //Update is called multiple times a frame
     void FixedUpdate()
     {
+        //sprint 
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            realSpeed = playerSpeed + dashSpeed;
+        }
+        else
+        {
+            realSpeed = playerSpeed;
+        }
+
+        //move in x direction -/+
         float x = Input.GetAxis("Horizontal");
-        Vector3 move = new Vector3 (x * playerSpeed, rb.velocity.y, 0f);
+        Vector3 move = new Vector3 (x * realSpeed, rb.velocity.y, 0f);
         rb.velocity = move;
     }
 }
