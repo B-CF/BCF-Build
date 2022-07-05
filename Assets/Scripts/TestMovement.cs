@@ -10,7 +10,7 @@ public class TestMovement : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Transform target;
-    [SerializeField] SpriteRenderer renderer;
+    [SerializeField] SpriteRenderer renderer2D;
 
     bool canJump = true;
     float mx;
@@ -112,11 +112,11 @@ public class TestMovement : MonoBehaviour
     {
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
-            renderer.flipX = false;
+            renderer2D.flipX = false;
         }
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
-            renderer.flipX = true;
+            renderer2D.flipX = true;
         }
     }
 

@@ -250,6 +250,11 @@ RectTransform:
   m_AnchoredPosition: {x: 5.19, y: 10.41}
   m_SizeDelta: {x: 19.2, y: 10.54}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!212 &966491307 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8333599220841511569, guid: 79f8a2569771f9840847357cdeb845ab, type: 3}
+  m_PrefabInstance: {fileID: 1387925093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1387925093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -265,6 +270,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1524282247}
+    - target: {fileID: -2005107551022473362, guid: 79f8a2569771f9840847357cdeb845ab, type: 3}
+      propertyPath: renderer
+      value: 
+      objectReference: {fileID: 966491307}
+    - target: {fileID: -2005107551022473362, guid: 79f8a2569771f9840847357cdeb845ab, type: 3}
+      propertyPath: renderer2D
+      value: 
+      objectReference: {fileID: 966491307}
     - target: {fileID: -2005107551022473362, guid: 79f8a2569771f9840847357cdeb845ab, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 1
