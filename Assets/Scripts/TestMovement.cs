@@ -16,6 +16,7 @@ public class TestMovement : MonoBehaviour
     float mx;
 
     public float dashDistance = 15f;
+    int numberDashes = 1;
     bool isDashing;
     float doubleTapTime;
     KeyCode lastKeyCode;
@@ -32,7 +33,7 @@ public class TestMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         { 
-            if (doubleTapTime > Time.time && lastKeyCode == KeyCode.A)
+            if (doubleTapTime > Time.time && lastKeyCode == KeyCode.A && numberDashes > 0)
             {
                 StartCoroutine(Dash(-1f));
             }
@@ -46,7 +47,7 @@ public class TestMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (doubleTapTime > Time.time && lastKeyCode == KeyCode.D)
+            if (doubleTapTime > Time.time && lastKeyCode == KeyCode.D && numberDashes > 0)
             {
                 StartCoroutine(Dash(1f));
             }
@@ -67,7 +68,7 @@ public class TestMovement : MonoBehaviour
         }
     }
 
-    void Jump()
+    private void Jump()
     {
         if (canJump && numberJumps != 0)
         {
@@ -84,16 +85,19 @@ public class TestMovement : MonoBehaviour
 
 
     IEnumerator Dash (float direction)
-    {
+    { 
         isDashing = true;
         rb.velocity = new Vector2(rb.velocity.x, 0f);
         rb.AddForce(new Vector2(dashDistance * direction, 0f), ForceMode2D.Impulse);
         float gravity = rb.gravityScale;
         gravity = SetGravity(gravity);
         rb.gravityScale = 0;
+        numberDashes--;
         yield return new WaitForSeconds(0.4f);
         isDashing = false;
         rb.gravityScale = gravity;
+        yield return new WaitForSeconds(1f);
+        numberDashes++;
     }
     private float SetGravity(float gravity)
     {
@@ -108,7 +112,7 @@ public class TestMovement : MonoBehaviour
         return gravity;
     }
 
-    private void Flip()
+    public void Flip()
     {
         if (Input.GetAxisRaw("Horizontal") > 0)
         {

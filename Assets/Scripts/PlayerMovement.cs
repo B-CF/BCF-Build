@@ -10,10 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed;
     public Vector2 jumpForce;
     public Vector2 dashForce;
-    private int dashTime = 2;
     private bool canJump = true;
     private int numberJumps = 2;
-    private bool isMoving = false;
     private bool canDash = true;
 
     //get player
