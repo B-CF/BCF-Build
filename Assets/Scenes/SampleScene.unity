@@ -636,10 +636,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 676810948}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79df58c28dc66004499fc4ce27d5f6f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c437afeab1ee0a429355f431c07ca3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Respawn: 1
+  Scene: 1
 --- !u!61 &676810950
 BoxCollider2D:
   m_ObjectHideFlags: 0
