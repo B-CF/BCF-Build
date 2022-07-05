@@ -9,8 +9,12 @@ public class PlayerMovement : MonoBehaviour
     public float playerSpeed;
     public float dashSpeed;
     public Vector2 jumpForce;
+    public Vector2 dashForce;
+    private int dashTime = 2;
     private bool canJump = true;
     private int numberJumps = 2;
+    private bool isMoving = false;
+    private bool canDash = true;
 
     //get player
     Rigidbody2D rb;
@@ -42,19 +46,19 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //sprint 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && canDash)
         {
-            realSpeed = playerSpeed + dashSpeed;
+            realSpeed = dashSpeed;
         }
         else
         {
             realSpeed = playerSpeed;
         }
 
-        //move in x direction -/+
-        float x = Input.GetAxis("Horizontal");
-        Vector3 move = new Vector3 (x * realSpeed, rb.velocity.y, 0f);
-        rb.velocity = move;
+            //move in x direction -/+
+            float x = Input.GetAxis("Horizontal");
+            Vector3 move = new Vector3(x * realSpeed, rb.velocity.y, 0f);
+            rb.velocity = move;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
