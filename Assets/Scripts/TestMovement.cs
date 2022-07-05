@@ -10,6 +10,7 @@ public class TestMovement : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Transform target;
+    [SerializeField] SpriteRenderer renderer;
 
     bool canJump = true;
     float mx;
@@ -22,6 +23,7 @@ public class TestMovement : MonoBehaviour
     private void Update()
     {
         mx = Input.GetAxis("Horizontal");
+        Flip();
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -29,7 +31,7 @@ public class TestMovement : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.A))
-        {
+        { 
             if (doubleTapTime > Time.time && lastKeyCode == KeyCode.A)
             {
                 StartCoroutine(Dash(-1f));
@@ -105,4 +107,17 @@ public class TestMovement : MonoBehaviour
         }
         return gravity;
     }
+
+    private void Flip()
+    {
+        if (Input.GetAxisRaw("Horizontal") > 0)
+        {
+            renderer.flipX = false;
+        }
+        else if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            renderer.flipX = true;
+        }
+    }
+
 }
