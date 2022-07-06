@@ -16,6 +16,7 @@ public class TestMovement : MonoBehaviour
     float mx;
 
     public float dashDistance = 15f;
+    public float dashCoolDown = 1f;
     int numberDashes = 1;
     bool isDashing;
     float doubleTapTime;
@@ -96,7 +97,7 @@ public class TestMovement : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         isDashing = false;
         rb.gravityScale = gravity;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(dashCoolDown);
         numberDashes++;
     }
     private float SetGravity(float gravity)
