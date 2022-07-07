@@ -250,6 +250,17 @@ RectTransform:
   m_AnchoredPosition: {x: 3.91, y: 10.64}
   m_SizeDelta: {x: 19.2, y: 10.54}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &447277543 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2813008822748864376, guid: edcffcbe3b952fa4c8c64ad8467394e4, type: 3}
+  m_PrefabInstance: {fileID: 7986450040453653749}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ce10b4863b148d698f73a106ca9c0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1049170580
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +675,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 757733336430920714, guid: edcffcbe3b952fa4c8c64ad8467394e4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 757733336430920714, guid: edcffcbe3b952fa4c8c64ad8467394e4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6389310661410909604, guid: edcffcbe3b952fa4c8c64ad8467394e4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -712,6 +731,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7986450039269924160, guid: edcffcbe3b952fa4c8c64ad8467394e4, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 447277543}
+    - target: {fileID: 7986450039269924163, guid: edcffcbe3b952fa4c8c64ad8467394e4, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 447277543}
     - target: {fileID: 7986450039288866453, guid: edcffcbe3b952fa4c8c64ad8467394e4, type: 3}
       propertyPath: m_CullTransparentMesh
       value: 0
