@@ -539,6 +539,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &483095240 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8550565332498733903, guid: edcffcbe3b952fa4c8c64ad8467394e4, type: 3}
+  m_PrefabInstance: {fileID: 608187528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &608187528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -554,6 +559,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 790941048661931518, guid: edcffcbe3b952fa4c8c64ad8467394e4, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 483095240}
     - target: {fileID: 6389310661410909604, guid: edcffcbe3b952fa4c8c64ad8467394e4, type: 3}
       propertyPath: m_RootOrder
       value: 0

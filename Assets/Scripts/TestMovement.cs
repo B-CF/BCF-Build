@@ -22,10 +22,14 @@ public class TestMovement : MonoBehaviour
     float doubleTapTime;
     KeyCode lastKeyCode;
 
+    public Animator animator;
+
     private void Update()
     {
         mx = Input.GetAxis("Horizontal");
         Flip();
+
+        animator.SetFloat("Speed", Mathf.Abs(mx));
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
