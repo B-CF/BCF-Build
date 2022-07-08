@@ -26,7 +26,7 @@ public class TestDamage : MonoBehaviour
 
         if (currentHealth > 0 && currentHealth != maxHealth)
         {
-            RegenerateHealth(.0005f);
+            RegenerateHealth(.001f);
         }
     }
 
